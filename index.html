@@ -36,7 +36,7 @@ button{font:inherit;color:inherit}
 .btn.sm{padding:5px 10px;font-size:12px}
 .btn[disabled]{opacity:.6;cursor:progress}
 
-.app{display:grid;grid-template-columns:340px minmax(0,1fr);gap:20px;align-items:start;max-width:1580px;margin:0 auto}
+.app{display:grid;grid-template-columns:340px minmax(0,1fr);gap:20px;align-items:start;max-width:1780px;margin:0 auto}
 
 /* ───── sidebar ───── */
 .side{position:sticky;top:calc(env(safe-area-inset-top,0px) + 70px);max-height:calc(100vh - 90px);display:flex;flex-direction:column;
@@ -86,7 +86,7 @@ input[type=color]{width:38px;height:34px;padding:2px;border:1px solid var(--chro
   --paper:#FBFBFA; --ink:#1B1E24; --muted:#69707C; --line:#D9DCE2; --soft:#EEF0F2; --grid:rgba(27,30,36,.045); --faint:#AEB3BC;
   position:relative;background-color:var(--paper);
   background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
-  background-size:24px 24px;color:var(--ink);border:1px solid var(--line);border-radius:4px;padding:28px;font-family:var(--f-body);max-width:1200px;margin:0 auto}
+  background-size:24px 24px;color:var(--ink);border:1px solid var(--line);border-radius:4px;padding:28px;font-family:var(--f-body);max-width:1400px;margin:0 auto}
 .sheet.dark{--paper:#17191E; --ink:#ECEDEF; --muted:#959BA7; --line:#30343C; --soft:#22252C; --grid:rgba(255,255,255,.035); --faint:#565C67}
 .reg{position:absolute;width:14px;height:14px;border:0 solid var(--faint)}
 .reg.tl{top:10px;left:10px;border-top-width:1px;border-left-width:1px}
@@ -106,7 +106,7 @@ input[type=color]{width:38px;height:34px;padding:2px;border:1px solid var(--chro
 .duo .x2{font-family:var(--f-mono);font-size:13px;color:var(--muted)}
 .duo .dot{display:inline-block;width:12px;height:12px;border-radius:50%;margin-right:6px;vertical-align:1px}
 
-.body{display:grid;grid-template-columns:minmax(0,1fr) 270px minmax(0,1fr);gap:28px;align-items:start}
+.body{display:grid;grid-template-columns:minmax(0,1fr) 300px minmax(0,1fr);gap:36px;align-items:start}
 
 .char{min-width:0;display:flex;flex-direction:column;gap:14px}
 .cn{display:flex;align-items:flex-end;justify-content:space-between;gap:12px}
@@ -120,7 +120,7 @@ input[type=color]{width:38px;height:34px;padding:2px;border:1px solid var(--chro
   background-repeat:no-repeat;background-position:center;background-size:cover;cursor:pointer;overflow:hidden}
 .slot .ph{position:absolute;inset:0;display:grid;place-items:center;text-align:center;color:var(--muted);font-size:11.5px;line-height:1.4;padding:6px}
 .slot .ph b{display:block;font-size:22px;color:var(--acc);font-family:var(--f-display);line-height:1.1}
-.hero{aspect-ratio:3/4;box-shadow:7px 7px 0 var(--acc)}
+.hero{aspect-ratio:5/6;box-shadow:7px 7px 0 var(--acc)}
 .char.b .hero{box-shadow:-7px 7px 0 var(--acc)}
 .facts{position:absolute;left:0;right:0;top:0;display:flex;flex-wrap:wrap;gap:5px;padding:10px}
 .char.b .facts{justify-content:flex-end}
@@ -153,10 +153,18 @@ input[type=color]{width:38px;height:34px;padding:2px;border:1px solid var(--chro
 .quote{margin:0;padding:9px 13px;background:var(--soft);border-left:3px solid var(--acc);font-family:var(--f-display);font-size:14.5px}
 .char.b .quote{border-left:0;border-right:3px solid var(--acc);text-align:right}
 
-.center{min-width:0;display:flex;flex-direction:column;gap:16px}
-.pairimg{aspect-ratio:4/5;--acc:var(--ink);border:1.5px solid var(--ink)}
-.pairimg .ph b{color:var(--ink)}
-.rel{text-align:center;padding:11px 10px;border:1.5px solid var(--ink);background:var(--paper)}
+.center{min-width:0;display:flex;flex-direction:column;justify-content:center;gap:16px;align-self:center;text-align:center}
+.herowrap{position:relative;margin-bottom:var(--tokpad,0px)}
+.herowrap:has(.sdtok:not(.empty)){--tokpad:44px}
+.sdtok{position:absolute;bottom:-44px;width:56%;aspect-ratio:1;border-radius:0;z-index:2;
+  background-repeat:no-repeat;background-position:center;background-size:contain;cursor:pointer}
+.char.a .sdtok{right:-12%}
+.char.b .sdtok{left:-12%}
+.sdtok.empty{display:none}
+.sdtok .ph{position:absolute;inset:0;display:grid;place-items:center;text-align:center;font-size:11px;color:var(--muted);line-height:1.3}
+.sdtok .ph b{display:block;font-size:18px;color:var(--acc);font-family:var(--f-display)}
+.sheet.capturing .sdtok.empty{display:none}
+.rel{text-align:center;padding:4px 10px}
 .rel .relv{font-family:var(--f-display);font-weight:800;font-size:20px;line-height:1.25;margin-top:3px;word-break:keep-all}
 .arrow{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:6px}
 .who{width:30px;height:30px;border-radius:50%;background-size:cover;background-position:center top;border:2px solid;display:grid;place-items:center;font-family:var(--f-display);font-weight:800;font-size:13px;color:#fff}
@@ -194,7 +202,6 @@ input[type=color]{width:38px;height:34px;padding:2px;border:1px solid var(--chro
 @media (max-width:1180px){
   .body{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
   .center{grid-column:1/-1;order:3;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px 24px;align-items:start}
-  .center .pairimg{grid-row:span 4}
 }
 @media (max-width:900px){
   .app{grid-template-columns:minmax(0,1fr)}
@@ -208,6 +215,7 @@ input[type=color]{width:38px;height:34px;padding:2px;border:1px solid var(--chro
   .scrim{position:fixed;inset:0;z-index:44;background:rgba(0,0,0,.3)}
 }
 @media (max-width:700px){
+  .char.a .sdtok{right:-8px} .char.b .sdtok{left:-8px}
   .body{grid-template-columns:minmax(0,1fr)}
   .center{display:flex}
   .char.b .cn{flex-direction:row;text-align:left}
@@ -219,6 +227,7 @@ input[type=color]{width:38px;height:34px;padding:2px;border:1px solid var(--chro
   .sheet{padding:18px 14px}
   .pairname{font-size:30px}
   .sw{width:36px;height:36px}
+  .char.a .sdtok{right:-4px} .char.b .sdtok{left:-4px}
 }
 @media (prefers-reduced-motion:no-preference){.side{transition:transform .25s ease}}
 
@@ -271,9 +280,6 @@ input[type=color]{width:38px;height:34px;padding:2px;border:1px solid var(--chro
       <section class="char a"></section>
 
       <aside class="center">
-        <div class="slot pairimg" data-slot="pair.img" tabindex="0" role="button" aria-label="페어 이미지 올리기">
-          <div class="ph"><div><b>+</b>페어 이미지<br>두 사람이 함께 있는 그림</div></div>
-        </div>
         <div class="rel">
           <div class="eyebrow">Relation</div>
           <div class="relv" data-v="pair.rel" data-ph="관계"></div>
@@ -329,6 +335,7 @@ input[type=color]{width:38px;height:34px;padding:2px;border:1px solid var(--chro
     </div>
     <div class="letter">%</div>
   </div>
+  <div class="herowrap">
   <div class="slot hero" data-slot="$.img" tabindex="0" role="button" aria-label="프로필 이미지 올리기">
     <div class="ph"><div><b>+</b>프로필 이미지</div></div>
     <div class="facts">
@@ -337,6 +344,8 @@ input[type=color]{width:38px;height:34px;padding:2px;border:1px solid var(--chro
       <span class="fact" data-fact="$.gender"><small>SEX</small><span data-v="$.gender"></span></span>
       <span class="fact" data-fact="$.job"><small>JOB</small><span data-v="$.job"></span></span>
     </div>
+  </div>
+    <div class="sdtok" data-slot="$.sd" tabindex="0" role="button" aria-label="SD 토큰 올리기"><div class="ph"><div><b>+</b>SD 토큰</div></div></div>
   </div>
   <div class="details">
     <figure><div class="slot" data-slot="$.face" tabindex="0" role="button" aria-label="얼굴 이미지 올리기"><div class="ph"><div><b>+</b>얼굴</div></div></div>
@@ -385,7 +394,6 @@ const T = (k, l, ph="") => ({t:"text", k, l, ph});
 const SCHEMA = {
   pair: [
     {t:"grp", l:"페어"}, T("pair.name","페어명","예: VINCERE"), T("pair.sub","한 줄 소개"), T("pair.world","세계관","예: 센티넬 가이드 버스"),
-    {t:"img", k:"pair.img", l:"페어 이미지"},
     {t:"grp", l:"관계"}, T("pair.rel","관계","예: 소꿉친구 → 동거인"), T("pair.ab","A → B 한마디"), T("pair.ba","B → A 한마디"),
     T("pair.tags","페어 태그","예: #파멸 #구원"),
   ],
@@ -399,6 +407,7 @@ const SCHEMA = {
     {t:"img", k:`${s}.face`, l:"얼굴", cap:`${s}.faceD`, ph:"눈매·인상"},
     {t:"img", k:`${s}.fit`, l:"의상", cap:`${s}.fitD`, ph:"옷차림"},
     {t:"img", k:`${s}.item`, l:"소품·특징", cap:`${s}.itemD`, ph:"점·흉터·소지품"},
+    {t:"img", k:`${s}.sd`, l:"SD 토큰"},
     {t:"grp", l:"키 비교"},
     {t:"img", k:`${s}.body`, l:"전신 (키 비교용)"},
     {t:"hmode", k:`${s}.hmode`},
@@ -589,9 +598,9 @@ function render(){
   });
   $$("[data-v]").forEach(el => { const v = state[el.dataset.v] || ""; el.textContent = v && el.dataset.pre ? el.dataset.pre + v : v; });
   $$("[data-fact]").forEach(f => f.classList.toggle("empty", !state[f.dataset.fact]));
-  $$("[data-slot]").forEach(p => { const img = state[p.dataset.slot]; p.style.backgroundImage = img ? `url("${img}")` : "none"; p.querySelector(".ph").hidden = !!img; });
+  $$("[data-slot]").forEach(p => { const img = state[p.dataset.slot]; p.style.backgroundImage = img ? `url("${img}")` : "none"; p.querySelector(".ph").hidden = !!img; p.classList.toggle("empty", !img); });
   $$("[data-who]").forEach(w => {
-    const s = w.dataset.who, face = state[s+".face"];
+    const s = w.dataset.who, face = state[s+".sd"] || state[s+".face"];
     w.style.borderColor = state[s+".acc"]; w.style.backgroundColor = state[s+".acc"];
     w.style.backgroundImage = face ? `url("${face}")` : "none"; w.textContent = face ? "" : s.toUpperCase();
   });
@@ -643,8 +652,8 @@ $("#exportBtn").addEventListener("click", async () => {
   b.disabled = true; b.textContent = "만드는 중…"; closeSide();
   try {
     if (document.fonts?.ready) await document.fonts.ready;
-    const canvas = await html2canvas(sheet, { scale: 2, backgroundColor: null, logging: false, windowWidth: 1600,
-      onclone: doc => { const s = doc.getElementById("sheet"); s.classList.add("capturing"); s.style.width = "1200px"; s.style.maxWidth = "none"; } });
+    const canvas = await html2canvas(sheet, { scale: 2, backgroundColor: null, logging: false, windowWidth: 1900,
+      onclone: doc => { const s = doc.getElementById("sheet"); s.classList.add("capturing"); s.style.width = "1400px"; s.style.maxWidth = "none"; } });
     lastBlob = await new Promise(r => canvas.toBlob(r, "image/png"));
     $("#pvImg").src = canvas.toDataURL("image/png");
     $("#saveBtn").hidden = !downloads;
